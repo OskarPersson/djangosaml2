@@ -28,4 +28,4 @@ sys.path.append(PROJECT_DIR)
 application = get_wsgi_application()
 django.setup()
 
-management.call_command('test', 'djangosaml2.tests', 'testprofiles')
+management.call_command('test', '-v2', 'djangosaml2.tests', 'testprofiles')
