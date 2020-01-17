@@ -18,6 +18,7 @@ import os
 import sys
 
 from django.core.wsgi import get_wsgi_application
+import django
 from django.core import management
 
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir))
@@ -25,5 +26,6 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.settings")
 sys.path.append(PROJECT_DIR)
 # Load models
 application = get_wsgi_application()
+django.setup()
 
 management.call_command('test', 'djangosaml2.tests', 'testprofiles')
